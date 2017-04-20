@@ -314,8 +314,8 @@ bot.on('photo', msg => {
 		let upload = pathToDir + uploadsDirName;
 		let parsed = url.parse(urlToFile);
 		// let myFileName = upload + path.basename(parsed.pathname);
-		let myFileName = upload + require(pathToDir + counterFileName).path;
-		myFileName += "." + require(pathToDir + counterFileName).step;
+		let myFileName = upload + myRequire(pathToDir + counterFileName).path;
+		myFileName += "." + myRequire(pathToDir + counterFileName).step;
 		myFileName += path.extname(parsed.pathname);
 		download(urlToFile, myFileName, () => {});
 		// Перейти к следующему вопросу

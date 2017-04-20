@@ -142,9 +142,34 @@ app.get(`/${databaseName}`, (req, res) => {
 			} else {
 				// Вывести файл тестовый файл
 				fs.readFile(route, "utf8", (err, data) => {
-					html += `<p>${data}</p>`;
-					html += `<p><a href="${databaseName}">На главную</a></p>`;
-					res.send(html);
+					let style1 = "width: 70%; min-height: 150px; float: left;";
+					let style2 = "width: 30%; min-height: 150px; margin-left: 70%;";
+					let fileDiv = `<div style="${style1}">${data}</div>`;
+
+					// Костыль. Выводим папку uploads
+					if (path.extname(route) == ".txt") {
+						let imgsDiv = "";
+						let pathToUpload = route.substr(0, route.length - admin.answersFileName.length);
+						pathToUpload += admin.uploadsDirName;
+						console.log(pathToUpload);
+
+						fs.readdir(pathToUpload, (err, files) => {
+
+							for (let i = 0; i < files.length; i++) {
+								let file = pathToUpload + "/" + files[i];
+								imgsDiv += `<p>Картинка <a target="_blank" href="${databaseName}?route=${file}"">${files[i]}</a></p>`;
+							}
+
+							imgsDiv = `<div style="${style2}">${imgsDiv}</div>`;
+							html += fileDiv + imgsDiv;
+							html += `<p><a href="${databaseName}">На главную</a></p>`;
+							res.send(html);
+						});
+					} else {
+						html += fileDiv;
+						html += `<p><a href="${databaseName}">На главную</a></p>`;
+						res.send(html);
+					}
 				});
 			}
 		}
