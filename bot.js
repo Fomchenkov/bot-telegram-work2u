@@ -188,30 +188,55 @@ function sendMessage(stepObj, msg) {
 
 	if (text && photoUrl && markup) {
 		if (Array.isArray(photoUrl)) {
-			bot.sendMessage(msg.from.id, text, { markup, parse: "Markdown" });
+			bot.sendMessage(msg.from.id, text, { markup, parse: "Markdown" })
+			.catch(() => {
+				bot.sendMessage(msg.from.id, admin.errorMessage);
+			});
 			photoUrl.forEach((element, index) => {
-				bot.sendPhoto(msg.from.id, element, { markup });
+				bot.sendPhoto(msg.from.id, element, { markup }).catch(() => {
+					bot.sendMessage(msg.from.id, admin.errorMessage);
+				});
 			});
 		} else {
 			return bot.sendPhoto(msg.from.id, photoUrl, { 
 				caption: text, 
 				markup, 
 				parse: "Markdown"
+			}).catch(() => {
+				bot.sendMessage(msg.from.id, admin.errorMessage);
 			});
 		}
 	} else if (text && photoUrl) {
-		return bot.sendPhoto(msg.from.id, photoUrl, { caption: text, parse: "Markdown" });
+		return bot.sendPhoto(msg.from.id, photoUrl, { caption: text, parse: "Markdown" })
+		.catch(() => {
+			bot.sendMessage(msg.from.id, admin.errorMessage);
+		});
 	} else if (text && markup) {
-		return bot.sendMessage(msg.from.id, text, { markup, parse: "Markdown" });
+		return bot.sendMessage(msg.from.id, text, { markup, parse: "Markdown" })
+		.catch(() => {
+			bot.sendMessage(msg.from.id, admin.errorMessage);
+		});
 	} else if (photoUrl && markup) {
-		return bot.sendPhoto(msg.from.id, photoUrl, { markup, parse: "Markdown" });
+		return bot.sendPhoto(msg.from.id, photoUrl, { markup, parse: "Markdown" })
+		.catch(() => {
+			bot.sendMessage(msg.from.id, admin.errorMessage);
+		});
 	} else if (photoUrl) {
-		return bot.sendPhoto(msg.from.id, photoUrl, {parse: "Markdown"});
+		return bot.sendPhoto(msg.from.id, photoUrl, {parse: "Markdown"})
+		.catch(() => {
+			bot.sendMessage(msg.from.id, admin.errorMessage);
+		});
 	} else if (text) {
-		return bot.sendMessage(msg.from.id, text, {parse: "Markdown"});
+		return bot.sendMessage(msg.from.id, text, {parse: "Markdown"})
+		.catch(() => {
+			bot.sendMessage(msg.from.id, admin.errorMessage);
+		});
 	} else {
 		text = "Нет ответа. Напишите администратору об этой ошибке.";
-		return bot.sendMessage(msg.from.id, text, {parse: "Markdown"});
+		return bot.sendMessage(msg.from.id, text, {parse: "Markdown"})
+		.catch(() => {
+			bot.sendMessage(msg.from.id, admin.errorMessage);
+		});
 	}
 }
 
@@ -264,8 +289,8 @@ bot.on('text', msg => {
 			"path": "1",
 			"step": "1"
 		});
-		fs.writeFile(`${pathToDir}/${counterFileName}`, data, (err) => {});
-		fs.writeFile(`${pathToDir}/${answersFileName}`, "", (err) => {});
+		fs.writeFileSync(`${pathToDir}/${counterFileName}`, data);
+		fs.writeFileSync(`${pathToDir}/${answersFileName}`, "");
 		// Создать папку для загружаемых фотографий
 		fs.mkdirSync(`${pathToDir}/${uploadsDirName}`);
 	} catch (e) {}

@@ -11,5 +11,6 @@
 	"databaseNameToSite": "view",
 	"databaseNameToLogin": "login",
 	"databaseNameToLogout": "logout",
+	"errorMessage": "Извините, отправьте ответ еще раз.",
 	"lastMessage": "Благодарим вас за доверие, ожидайте решения оператора.\nС вами скоро свяжутся."
 }
