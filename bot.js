@@ -273,6 +273,50 @@ bot.on("/help", msg => {
 	return bot.sendMessage(msg.from.id, text);
 });
 
+function deleteFolderRecursive(path) {
+	var files = [];
+	if( fs.existsSync(path) ) {
+		files = fs.readdirSync(path);
+		files.forEach(function(file,index){
+			var curPath = path + "/" + file;
+			if(fs.lstatSync(curPath).isDirectory()) { // recurse
+				deleteFolderRecursive(curPath);
+			} else { // delete file
+				fs.unlinkSync(curPath);
+			}
+		});
+		try {
+			fs.rmdirSync(path);
+		} catch(e) { console.log(e.message); }
+	}
+}
+
+/**
+* Удаление данных о пользователе с сервера 
+* и начало нового опроса
+*/
+bot.on("/restart", msg => {
+	// Удалить папку пользователя
+	let username = msg.from.username;
+	let pathToDir = `./${dirForUsers}/${username}/`;
+	deleteFolderRecursive(pathToDir);
+
+	fs.mkdirSync(pathToDir);
+	// Создать новые файлы со счетчиком вопросов и с ответами
+	let data = JSON.stringify({
+		"path": "1",
+		"step": "1"
+	});
+	fs.writeFileSync(`${pathToDir}/${counterFileName}`, data);
+	fs.writeFileSync(`${pathToDir}/${answersFileName}`, "");
+	// Создать папку для загружаемых фотографий
+	fs.mkdirSync(`${pathToDir}/${uploadsDirName}`);
+
+	// Отправить первое сообщение
+	let stepObj = findAnswer(msg);
+	sendMessage(stepObj, msg);
+});
+
 bot.on('text', msg => {
 	// Проверять, что введенный текст - не команда
 	if (Array.isArray(msg.entities)) {
