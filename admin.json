@@ -1,0 +1,15 @@
+{
+	"token": "366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY",
+	"siteLogin": "admin",
+	"sitePassword": "admin",
+	"dirForUsers": "DataBase",
+	"ourDir": "OurFiles",
+	"counterFileName": "counter.json",
+	"configFileName": "config.json",
+	"answersFileName": "answers.txt",
+	"uploadsDirName": "uploads/",
+	"databaseNameToSite": "view",
+	"databaseNameToLogin": "login",
+	"databaseNameToLogout": "logout",
+	"lastMessage": "Благодарим вас за доверие, ожидайте решения оператора.\nС вами скоро свяжутся."
+}
