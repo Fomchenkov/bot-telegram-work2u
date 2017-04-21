@@ -22,6 +22,7 @@
 			}, {
 				"step": "5",
 				"text": "Спасибо за ответы! Сейчас я расскажу о нашей вакансии, но сначала скажи как ты узнал о нас?",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_60.jpg",
 				"markup": [["Вконтакте"], ["Инстаграм"], ["Ютуб"], ["Нашел в интернете"], ["Рассказали друзья"]]
 			}
 		]
@@ -32,10 +33,12 @@
 			{
 				"step": "1",
 				"text": "Кто-то рождатеся уже богатым, а нам приходится считать каждые 100 рублей. Думаешь ты знаешь что-то о ценах? Я развею твои иллюзии. Зайди в гугл, найди сайт самого большого магазина Москвы ЦУМ и посмотри цены на одежду. Футболка 30 тысяч, туфли 60 тысяч, пиджак 200 тысяч. И это средние цены, есть и дороже. Да, люди так живут. Думаешь таких мало? Ты снова ошибаешься. ЦУМ это 7-ми этажный магазин, там закупаются сотни тысяч россиян. Но по телевизору тебе такое не расскажут. Понимаешь сколько надо зарабатывать чтобы так жить? Миллионы. Откуда у них всех миллионы?",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_62.jpg",		
 				"markup": [["Продолжить"]]
 			}, {
 				"step": "2",
 				"text": "Наша работа исправляет современную несправедливость. Для сравнения - ты можешь 5 лет проучится в университете, устроится на работу с зарплатой 30 тысяч в месяц и через 3 года ты заработаешь 1 миллион рублей. Итого 1 миллион рублей за 8 лет. Но за эти деньги даже не купить квартиру! Итого потребуется около 15 лет ради 2-х комнатной квартиры. Работая у нас ты заработаешь на квартиру за 6 месяцев. За год купишь несколько квартир и на всегда обеспечишь себе безбедную жизнь. И главное! Наша работа - руками! Это не кидалово, где надо вложить свои деньги и все потерять.",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_64.jpg",
 				"markup": [["Читать дальше"]]
 			}
 		]
@@ -46,6 +49,7 @@
 			{
 				"step": "1",
 				"text": "Давай сейчас разберемся с тем, сколько ты будешь зарабатывать, а потом ты узнаешь почему заработок такой высокий.",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_66.jpg",
 				"markup": [["Посчитать заработок"]]
 			}, {
 				"step": "2",
@@ -76,6 +80,7 @@
 			{
 				"step": "1",
 				"text": "Ты должен сам понимать, что все кто обещают такие деньги легально - обманывают. Никто не будет так много платить за легальную работу молодому парню. Мы реально платим за такую работу, это означает - мы держимся в тени, мы не дружим с законом. Но не все так страшно. По статистике только 2 человека из 100 попадают в руки закона. И всегда они попадаются только по 1 причине - они не следуют нашим указаниям безопасности. Рассказать об этом?",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_68.jpg",
 				"markup": [["Да"]]
 			}
 		]
@@ -86,6 +91,7 @@
 			{
 				"step": "1",
 				"text": "Мы обучаем всех. Мы объясняем как действует закон и как не попастся. Приятный бонус - ты работаешь один, тебе на работе не надо встречаться ни с одним человеком. Мы обучаем анонимности, изменению IP адреса твоего устройства. Контакт с нами происходит посредством защищенного средства общения. Риск отсутствует, если ты следуешь нашим инструкциям. Готов узнать о работе?",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_70.jpg",
 				"markup": [["Да"]]
 			}
 		]
@@ -96,6 +102,7 @@
 			{
 				"step": "1",
 				"text": "Давай разберемся в чем состоит работа. Твоя должность курьер розничного магазина. Курьер это вполне нормальная работа. Ты что-то забираешь и куда-то отвозишь. У нас же все еще проще. Ты забираешь 1 раз пакет размером с кулак, делаешь из него много маленьких пакетиков размером с ноготь. В удобное для тебя время ты раскидываешь в любом районе города эти мини-пакеты. Я думаю ты понимаешь о чем речь?",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_72.jpg",
 				"markup": [["Понимаю"], ["Не понимаю"]]
 			}
 		]
@@ -121,13 +128,19 @@
 				"step": "1",
 				"text": "Фото из разных городов",
 				"photoUrl": [
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_23.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_27.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_30.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_34.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_35.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_32.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_33.jpg"
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_87.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_88.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_89.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_90.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_91.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_92.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_93.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_94.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_95.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_96.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_98.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_100.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_102.jpg"
 				],
 				"markup": [["Понял"]]
 			}
@@ -143,10 +156,12 @@
 			}, {
 				"step": "2",
 				"text": "Многое зависит от того, в каком городе работать - во многих городах высокая конкуренция и низкие продажи, поэтому мы отправляем кладчиков в те города, где хороший спрос. Мы приветствуем вахтовый метод работы - ты летишь в назначенный нами город, мы оплачиваем тебе билет на самолет и проживание. Работаешь там некоторое время, сам определяешь сколько. После можешь либо уволится, либо взять отпуск. Если же ты не имеешь возможности переехать, но очень хочешь работать,мы рассмотрим вариант с тем, чтобы ты работал в своем городе.",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_74.jpg",
 				"markup": [["Я хочу расти в зарплате"]]
 			}, {
 				"step": "3",
 				"text": "У нас есть карьерный рост. Мы смотрим на твои способности и за несколько месяцев работы ты можешь вырости до важной должности. На важных должностях можно зарабатывать до 2 миллионов рублей в месяц.",
+				"photoUrl": "http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_76.jpg",
 				"markup": [["Что будет если я захочу уволится?"]]
 			}, {
 				"step": "4",

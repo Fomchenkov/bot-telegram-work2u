@@ -378,6 +378,7 @@ bot.on('photo', msg => {
 		console.log(re);
 		let file_path = re.file_path;
 		let urlToFile = `http://api.telegram.org/file/bot${TOKEN}/${file_path}`;
+		console.log("\n", urlToFile, "\n");
 		// Имя, под котороым файл сохранится у нас на сервере
 		let pathToDir = `./${dirForUsers}/${username}/`;
 		let upload = pathToDir + uploadsDirName;
