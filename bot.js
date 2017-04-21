@@ -149,6 +149,7 @@ function findAnswer(msg) {
 	// ОТПРАВИТЬ НАЗВАНИЕ НОВОГО ОТДЕЛА
 	if (currentStep == 1) {
 		pathname = "*" + config[currentPath-1].name + "*";
+		pathname += "\n";
 		console.log(pathname);
 	}
 	// Выбрать и отправить сообщение пользователю в соответствии с path и step
