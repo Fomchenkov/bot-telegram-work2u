@@ -155,13 +155,6 @@ app.get(`/${databaseName}`, (req, res) => {
 
 						fs.readdir(pathToUpload, (err, files) => {
 
-							if (! files) {
-								html += fileDiv;
-								html += `<p><a href="${databaseName}">На главную</a></p>`;
-								res.send(html);
-								return;
-							}
-
 							for (let i = 0; i < files.length; i++) {
 								let file = pathToUpload + "/" + files[i];
 								imgsDiv += `<p>Картинка <a target="_blank" href="${databaseName}?route=${file}"">${files[i]}</a></p>`;
