@@ -181,9 +181,11 @@ function sendMessage(stepObj, msg) {
 	let markup = null; // Array to build keybrd
 
 	if (stepObj.text) text = stepObj.text;
+	/*
 	if (stepObj.pathname) {
 		text = stepObj.pathname + "\n" + text;
 	}
+	*/
 	if (stepObj.photoUrl) photoUrl = stepObj.photoUrl;
 	if (stepObj.markup) markup = bot.keyboard(stepObj.markup, { resize: true });
 
