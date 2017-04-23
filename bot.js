@@ -220,10 +220,18 @@ function sendMessage(stepObj, msg) {
 			bot.sendMessage(msg.from.id, admin.errorMessage);
 		});
 	} else if (photoUrl && markup) {
-		return bot.sendPhoto(msg.from.id, photoUrl, { markup, parse: "Markdown" })
-		.catch(() => {
-			bot.sendMessage(msg.from.id, admin.errorMessage);
-		});
+		if (Array.isArray(photoUrl)) {
+			photoUrl.forEach((element, index) => {
+				bot.sendPhoto(msg.from.id, element, { markup }).catch(() => {
+					bot.sendMessage(msg.from.id, admin.errorMessage);
+				});
+			});
+		} else {
+			return bot.sendPhoto(msg.from.id, photoUrl, { markup, parse: "Markdown" })
+			.catch(() => {
+				bot.sendMessage(msg.from.id, admin.errorMessage);
+			});
+		}
 	} else if (photoUrl) {
 		return bot.sendPhoto(msg.from.id, photoUrl, {parse: "Markdown"})
 		.catch(() => {

@@ -129,18 +129,48 @@
 				"text": "Фото из разных городов",
 				"photoUrl": [
 					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_87.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_88.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_88.jpg"
+				],
+				"markup": [["Показать еще"]]
+			}, {
+				"step": "2",
+				"photoUrl": [
 					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_89.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_90.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_90.jpg"
+				],
+				"markup": [["Показать еще"]]
+			}, {
+				"step": "3",
+				"photoUrl": [
 					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_91.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_92.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_92.jpg"
+				],
+				"markup": [["Показать еще"]]
+			}, {
+				"step": "4",
+				"photoUrl": [
 					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_93.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_94.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_94.jpg"				],
+				"markup": [["Показать еще"]]
+			}, {
+				"step": "5",
+				"photoUrl": [
 					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_95.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_96.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_96.jpg"
+				],
+				"markup": [["Показать еще"]]
+			}, {
+				"step": "6",
+				"photoUrl": [
 					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_98.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_100.jpg",
-					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_102.jpg"
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_100.jpg"
+				],
+				"markup": [["Показать еще"]]
+			}, {
+				"step": "7",
+				"photoUrl": [
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_102.jpg",
+					"http://api.telegram.org/file/bot366762138:AAEZ23NH_9vBAuE4o2F0lYN45eKu0iqpTVY/photos/file_116.jpg"
 				],
 				"markup": [["Понял"]]
 			}
