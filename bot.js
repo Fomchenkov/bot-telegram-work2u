@@ -10,7 +10,6 @@ const admin = require("./admin");
 
 const TOKEN = admin.token;
 const bot = new telebot(TOKEN);
-const appPort = 5000;
 // Папка для хранения данных пользователей
 const dirForUsers = admin.dirForUsers;
 // Папака для хранения данных админа
@@ -415,4 +414,4 @@ bot.connect();
 
 // Запуск сервера
 const server = require("./server");
-server.listen((process.env.PORT || appPort), () => console.log("Server started"));
+server.listen((process.env.PORT || 5000), () => console.log("Server started"));
