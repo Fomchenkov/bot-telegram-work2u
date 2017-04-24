@@ -10,7 +10,7 @@ const admin = require("./admin");
 
 const TOKEN = admin.token;
 const bot = new telebot(TOKEN);
-const appPort = 80;
+const appPort = 5000;
 // Папка для хранения данных пользователей
 const dirForUsers = admin.dirForUsers;
 // Папака для хранения данных админа
