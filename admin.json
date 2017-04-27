@@ -9,6 +9,7 @@
 	"answersFileName": "answers.txt",
 	"uploadsDirName": "uploads/",
 	"databaseNameToSite": "view",
+	"databaseNameDeleteName": "delete",
 	"databaseNameToLogin": "login",
 	"databaseNameToLogout": "logout",
 	"errorMessage": "Извините, отправьте ответ еще раз.",

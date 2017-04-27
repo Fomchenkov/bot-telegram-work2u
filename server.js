@@ -35,6 +35,24 @@ function isDir(path) {
 	return fs.lstatSync(path).isDirectory();
 }
 
+function deleteFolderRecursive(path) {
+	var files = [];
+	if( fs.existsSync(path) ) {
+		files = fs.readdirSync(path);
+		files.forEach(function(file,index){
+			var curPath = path + "/" + file;
+			if(fs.lstatSync(curPath).isDirectory()) { // recurse
+				deleteFolderRecursive(curPath);
+			} else { // delete file
+				fs.unlinkSync(curPath);
+			}
+		});
+		try {
+			fs.rmdirSync(path);
+		} catch(e) { console.log(e.message); }
+	}
+}
+
 app.get('/', (req, res) => {
 	res.send("<p>Telegram bot working...</p>");
 });
@@ -88,6 +106,17 @@ app.get(`/${admin.databaseNameToLogout}`, (req, res) => {
 	res.redirect(`/${admin.databaseNameToLogin}`);
 	return;
 });
+
+app.get(`/${admin.databaseNameDeleteName}`, (req, res) => {
+	if (req.query.name) {
+		// Имя папки, которую нужно удалить
+		let name = req.query.name;
+		try {
+			deleteFolderRecursive(dirForUsers + "/" + name);
+		} catch(e) { console.log(e.message); }
+	}
+	res.redirect(`/${admin.databaseNameToLogin}`);
+}); 
 
 // Обращение к базе данных с пользователями
 app.get(`/${databaseName}`, (req, res) => {
@@ -190,7 +219,8 @@ app.get(`/${databaseName}`, (req, res) => {
 			for (let i = 0; i < files.length; i++) {
 				let file = route + files[i];
 				if (isDir(file)) {
-					html += `<p>Папка <a href="${databaseName}?route=${file}">${files[i]}</a></p>`;
+					html += `<p>Папка <a href="${databaseName}?route=${file}">${files[i]}</a>`;
+					html += ` <a href="${admin.databaseNameDeleteName}?name=${files[i]}">Удалить</a></p>`;
 				} else {
 					html += `<p>Файл <a href="${databaseName}?route=${file}"">${files[i]}</a></p>`;
 				}
