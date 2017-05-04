@@ -23,6 +23,8 @@ const uploadsDirName = admin.uploadsDirName;
 const lastMessage = admin.lastMessage;
 // Сервер для загрузки данных о пользователях
 const serverToUpload = admin.serverToUpload;
+// Имя файла со временем пользователей
+const timeFile = "time_file.json";
 
 /**
 * Скачать файл по заданному uri
@@ -65,6 +67,12 @@ function checkToEnd(msg) {
 			"path": "1",
 			"step": "1"
 		});
+		// Добавление изменения в timeFile
+		let json_str = myRequire("./" + timeFile);
+		json_str[msg.from.username] = Date.now();
+		let arr = JSON.stringify(json_str);
+		fs.writeFileSync("./" + timeFile, arr);
+
 		fs.writeFile(`${pathToDir}/${counterFileName}`, data, (err) => {});
 		fs.writeFile(`${pathToDir}/${answersFileName}`, "", (err) => {});
 		// Создать папку для загружаемых фотографий
@@ -127,9 +135,8 @@ function plusOneStep(msg) {
 function myRequire(url) {
 	let str = fs.readFileSync(url, "utf8");
 	let obj;
-	try {
-		obj = JSON.parse(str);
-	} catch(e) { obj = {"path":1,"step":1}; }
+	try { obj = JSON.parse(str); } 
+	catch(e) { obj = {"path":1,"step":1}; }
 	return obj;
 }
 
@@ -264,6 +271,13 @@ bot.on('/start', msg => {
 			"path": "1",
 			"step": "1"
 		});
+
+		// Добавление изменения в timeFile
+		let json_str = myRequire("./" + timeFile);
+		json_str[msg.from.username] = Date.now();
+		let arr = JSON.stringify(json_str);
+		fs.writeFileSync("./" + timeFile, arr);
+
 		fs.writeFileSync(`${pathToDir}/${counterFileName}`, data);
 		fs.writeFileSync(`${pathToDir}/${answersFileName}`, "");
 		// Создать папку для загружаемых фотографий
@@ -311,6 +325,11 @@ bot.on("/restart", msg => {
 	let username = msg.from.username;
 	let pathToDir = `./${dirForUsers}/${username}/`;
 	deleteFolderRecursive(pathToDir);
+	// Удаления данных из timeFile
+	let json_str = myRequire("./" + timeFile);
+	delete json_str[msg.from.username];
+	let arr = JSON.stringify(json_str);
+	fs.writeFileSync("./" + timeFile, arr);
 
 	fs.mkdirSync(pathToDir);
 	// Создать новые файлы со счетчиком вопросов и с ответами
@@ -318,6 +337,13 @@ bot.on("/restart", msg => {
 		"path": "1",
 		"step": "1"
 	});
+
+	// Добавление изменения в timeFile
+	json_str = myRequire("./" + timeFile);
+	json_str[msg.from.username] = Date.now();
+	arr = JSON.stringify(json_str);
+	fs.writeFileSync("./" + timeFile, arr);
+
 	fs.writeFileSync(`${pathToDir}/${counterFileName}`, data);
 	fs.writeFileSync(`${pathToDir}/${answersFileName}`, "");
 	// Создать папку для загружаемых фотографий
@@ -344,6 +370,12 @@ bot.on('text', msg => {
 			"path": "1",
 			"step": "1"
 		});
+		// Добавление изменения в timeFile
+		let json_str = myRequire("./" + timeFile);
+		json_str[msg.from.username] = Date.now();
+		let arr = JSON.stringify(json_str);
+		fs.writeFileSync("./" + timeFile, arr);
+
 		fs.writeFileSync(`${pathToDir}/${counterFileName}`, data);
 		fs.writeFileSync(`${pathToDir}/${answersFileName}`, "");
 		// Создать папку для загружаемых фотографий

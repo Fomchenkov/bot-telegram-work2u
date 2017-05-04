@@ -8,6 +8,7 @@ const app = express();
 const dirForUsers = admin.dirForUsers;
 // Ссылка для просмотра базы данных с сайта
 const databaseName = admin.databaseNameToSite;
+const timeFile = "time_file.json";
 
 // Публичная папка
 app.use("/" + dirForUsers, express.static(dirForUsers));
@@ -32,7 +33,31 @@ function isOuth(req) {
 * @return {boolean} - true, если папка; false - если файл
 */
 function isDir(path) {
-	return fs.lstatSync(path).isDirectory();
+	let result = false;
+	try { result = fs.lstatSync(path).isDirectory(); }
+	catch (e) {}
+	return result;
+}
+
+function sort(data) {
+	let out = [];
+	for (let i in data) {
+	    let tmp = { 
+	        key: i,
+	        value: data[i]
+	    };
+	    tmp[i] = tmp.value;
+	    tmp.toString = function() { return '"'+this.key+'": "'+this.value+'"' }
+	    out.push(tmp);
+	};
+	out.sort(function(a,b){return (a.value < b.value)-.5});
+	let result = {};
+	for (let i = 0; i < out.length; i++) {
+		let key = out[i].key;
+		let value = out[i].value;
+		result[key] = value;
+	}
+	return result;
 }
 
 function deleteFolderRecursive(path) {
@@ -107,13 +132,19 @@ app.get(`/${admin.databaseNameToLogout}`, (req, res) => {
 	return;
 });
 
+// Удалить папку
 app.get(`/${admin.databaseNameDeleteName}`, (req, res) => {
 	if (req.query.name) {
 		// Имя папки, которую нужно удалить
 		let name = req.query.name;
-		try {
-			deleteFolderRecursive(dirForUsers + "/" + name);
-		} catch(e) { console.log(e.message); }
+		try { deleteFolderRecursive(dirForUsers + "/" + name); } 
+		catch(e) { console.log(e.message); }
+		// Удаления данных из timeFile
+		let str = fs.readFileSync("./" + timeFile, "utf8");
+		let json_str = JSON.parse(str);
+		delete json_str[name];
+		let arr = JSON.stringify(json_str);
+		fs.writeFileSync("./" + timeFile, arr);
 	}
 	res.redirect(`/${admin.databaseNameToLogin}`);
 }); 
@@ -214,8 +245,20 @@ app.get(`/${databaseName}`, (req, res) => {
 		route = dirForUsers + "/";
 
 		fs.readdir(route, (err, files) => {
-			console.log(files);
+			let str = fs.readFileSync("./" + timeFile, "utf8");
+			let obj = JSON.parse(str);
+			obj = sort(obj);
 
+			for (let username in obj) {
+				let file = route + username;
+				if (isDir(file)) {
+					html += `<p>Папка <a href="${databaseName}?route=${file}">${username}</a>`;
+					html += ` <a href="${admin.databaseNameDeleteName}?name=${username}">Удалить</a></p>`;
+				} else {
+					html += `<p>Файл <a href="${databaseName}?route=${file}"">${username}</a></p>`;
+				}
+			}
+			/*
 			for (let i = 0; i < files.length; i++) {
 				let file = route + files[i];
 				if (isDir(file)) {
@@ -225,7 +268,7 @@ app.get(`/${databaseName}`, (req, res) => {
 					html += `<p>Файл <a href="${databaseName}?route=${file}"">${files[i]}</a></p>`;
 				}
 			}
-
+			*/
 			if (html == "" || html == exitLink) html += "<p>Папка пуста</p>";
 			html += `<p><a href="${databaseName}">На главную</a></p>`;
 			res.send(html);			
